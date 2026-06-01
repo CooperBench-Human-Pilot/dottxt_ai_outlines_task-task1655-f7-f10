@@ -42,6 +42,9 @@ date = Regex(r"(\d{4})-(0[1-9]|1[0-2])-([0-2][0-9]|3[0-1])")
 time = Regex(r"([0-1][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])")
 datetime = Regex(rf"({date.pattern})(\s)({time.pattern})")
 
+# Cryptographic hash types
+hash_sha256 = Regex(r"[a-fA-F0-9]{64}")
+
 # Basic regex types
 digit = Regex(r"\d")
 char = Regex(r"\w")
