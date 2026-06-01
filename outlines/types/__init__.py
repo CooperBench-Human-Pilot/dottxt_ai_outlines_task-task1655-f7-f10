@@ -68,3 +68,11 @@ email = Regex(
 isbn = Regex(
     r"(?:ISBN(?:-1[03])?:? )?(?=[0-9X]{10}$|(?=(?:[0-9]+[- ]){3})[- 0-9X]{13}$|97[89][0-9]{10}$|(?=(?:[0-9]+[- ]){4})[- 0-9]{17}$)(?:97[89][- ]?)?[0-9]{1,5}[- ]?[0-9]+[- ]?[0-9]+[- ]?[0-9X]"
 )
+
+# Matches a 16-digit credit card number grouped in four blocks of four digits.
+# The blocks may be written with no separators, or separated consistently by
+# either spaces or hyphens (separators may not be mixed). Note that this only
+# validates the format, not whether the number passes the Luhn checksum.
+credit_card = Regex(
+    r"[0-9]{16}|[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}|[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}"
+)
